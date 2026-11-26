@@ -32,7 +32,11 @@ All project IDs, model IDs, layers and files come from StreamBIM at runtime. No 
 
 The host must allow iframe embedding from StreamBIM. Once installed, open the widget, expand a model layer and select an IFC file, or click an object in 3D. Users need access to the original documents in the StreamBIM project.
 
-**GitHub is the source-code distribution here.** This repository does not automatically create a hosted widget URL. You can use GitHub Pages or another static host to serve `dist/`.
+### Hosted widget on GitHub Pages
+
+The widget is hosted at **https://terjefjeldberg.github.io/streambim-ifc-inspector/**. Use that address as `rootUrl` in StreamBIM. GitHub Pages must publish the `main` branch from `/ (root)`. The root `index.html` loads assets from `dist/` with a base URL, preserving the direct StreamBIM parent connection without an extra iframe or redirect. `.nojekyll` serves the widget as static files.
+
+For a fork, enable GitHub Pages on your own repository and use its Pages URL. For another static host, publish the contents of `dist/` directly.
 
 ## Run locally
 
@@ -93,3 +97,4 @@ This widget is available under the [MIT License](LICENSE).
 - [Public StreamBIM integration examples](https://github.com/byggstyrning/n8n-nodes-streambim) informed REST route discovery; the adapter was then checked against the live widget API.
 
 The StreamBIM SDK bundle was retrieved on 2026-11-26. SHA-256: `033cb5bae6e7cc7496e19ea0e7e073cfa4c2986694a45eca989d7a4518fdf308`.
+
