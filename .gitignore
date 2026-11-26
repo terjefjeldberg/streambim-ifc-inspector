@@ -1,0 +1,14 @@
+node_modules/
+.openai/
+.env
+.env.*
+reference/
+outputs/
+*.zip
+*.tar.gz
+*.ifc
+*.ifczip
+*.ifcxml
+*.png
+*.jpg
+*.log

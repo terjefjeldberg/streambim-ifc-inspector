@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="nb">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="strict-origin-when-cross-origin"><title>IFC-innsikt</title><script>if(window.parent!==window)document.documentElement.dataset.embedded='true';</script><link rel="stylesheet" href="style.css"></head>
+<body>
+<div id="inspector">
+  <header><div class="product">IFC-innsikt <span class="version">FORHÅNDSVERSJON</span></div></header>
+  <div class="connection"><span id="connection">Ikke tilkoblet</span><button id="refresh" disabled>Oppdater</button></div>
+  <div id="notice" role="status" aria-live="polite"></div>
+  <section id="welcome"><h1>Innsikt i modellfilene</h1><p>Se hvor filen kommer fra, hva den inneholder og hvordan valgte objekter er organisert.</p><p>Åpne widgeten i StreamBIM for automatisk tilkobling. Du kan også koble til et prosjekt i et eget vindu for å prøve den.</p><form id="connect-form"><label for="project-url">StreamBIM-prosjektlenke</label><input id="project-url" type="url" placeholder="https://app.streambim.com/…" required><button class="primary" type="submit">Koble til prosjekt</button></form><div class="local"><label class="filelabel" for="local-ifc">Undersøk en lokal IFC-fil</label><input id="local-ifc" type="file" accept=".ifc"><p>Filen leses på enheten din.</p></div></section>
+  <div id="workspace" hidden>
+    <section class="models"><div class="section-heading"><h1>Modellag</h1><span id="file-count"></span></div><label class="sr-only" for="search">Søk i modellag og filer</label><input id="search" type="search" placeholder="Søk i lag og filer"><div id="model-tree"></div></section>
+    <main><div class="tabs" role="tablist" aria-label="Informasjonsvisning"><button id="tab-file" role="tab" aria-selected="true" aria-controls="file-panel">Filinformasjon</button><button id="tab-object" role="tab" aria-selected="false" aria-controls="object-panel" tabindex="-1">Valgt objekt</button></div>
+    <section id="file-panel" role="tabpanel" aria-labelledby="tab-file"><div class="empty"><span class="file-symbol" aria-hidden="true">▤</span><h2>Velg en IFC-fil</h2><p>Utvid et modellag og velg filen du vil undersøke.</p></div></section>
+    <section id="object-panel" role="tabpanel" aria-labelledby="tab-object" hidden><div class="empty"><span class="file-symbol" aria-hidden="true">◇</span><h2>Velg et objekt i 3D</h2><p>Objektets egenskaper og faktiske plassering i IFC-hierarkiet vises her.</p></div></section></main>
+  </div>
+  <footer>Originaldata fra IFC · Lagstruktur fra StreamBIM</footer>
+</div>
+<div id="viewer-wrap" hidden><div class="viewer-title">StreamBIM <button id="close-viewer">Lukk prosjektvisning</button></div><iframe id="viewer" title="StreamBIM 3D-prosjekt" allow="fullscreen"></iframe></div>
+<script src="vendor/penpal-6.2.2.min.js"></script><script src="vendor/streambim-widget-api.min.js"></script><script type="module" src="app.mjs"></script>
+</body></html>
